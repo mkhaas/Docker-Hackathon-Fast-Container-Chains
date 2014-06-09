@@ -1,0 +1,13 @@
+# VERSION 0.2
+# DOCKER-VERSION 0.3.4
+# To build:
+# 1. Install docker (http://docker.io)
+# 2. Checkout source: git@github.com:gasi/docker-node-hello.git
+# 3. Build container: docker build .
+
+FROM    ubuntu
+
+RUN apt-get update; apt-get install -y iptables
+
+#Add Firewall rule to drop the web-traffic 
+CMD  iptables -A INPUT -p tcp --dport 49000 -j DROP  
