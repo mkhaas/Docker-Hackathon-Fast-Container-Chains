@@ -2,13 +2,13 @@ install:
 	npm install
 
 build:
-	docker build -t gasi/centos-node-hello .
+	docker build -t nodetest .
 
 run:
 	node index.js
 
 run-container:
-	docker run -p 49160:8080 -d gasi/centos-node-hello 
+	docker run -p 49000:8080 -d nodetest 
 
 test:
 	curl localhost
