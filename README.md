@@ -18,7 +18,7 @@ Implementation
 
 Example:  Firewall and Webserver container chains using docker
 
-fw: implements simple firewall that directly installs the firewall rule in the host's iptable. Hence, the traffic never hits the fw container.
+fw: implements simple firewall that directly installs the firewall rule directly in the host's iptable. Hence, the traffic never hits the fw container.
 
 docker-node-hello: a node.js server. The fw container above controls traffic access to this node.js server.
 
