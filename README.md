@@ -15,8 +15,15 @@ See attached containerchains.pdf
 
 Implementation
 ==============
-Example Firewall and Webserver container chains using docker
 
-fw: implements example firewall that directly installs the firewall rule in the host's iptable. Hence, the traffic never hits the fw container.
+Example:  Firewall and Webserver container chains using docker
 
-docker-node-hello: a simple node.js server. This webserver has the front-end fw above. Traffic access to this node.js is protected by the firewall.
+fw: implements simple firewall that directly installs the firewall rule in the host's iptable. Hence, the traffic never hits the fw container.
+
+docker-node-hello: a node.js server. The fw container above controls traffic access to this node.js server.
+
+In the above example, 
+
+[1] First run only the nodetest container --> allow traffic allowed on port 49000
+
+[2] Next, run fw container. It installs rule in the host's ip table. All traffic is drop at the host (does not reach the fw container).
