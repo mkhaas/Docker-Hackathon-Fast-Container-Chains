@@ -24,6 +24,6 @@ docker-node-hello: a node.js server. The fw container above controls traffic acc
 
 In the above example, 
 
-[1] First run only the nodetest container --> allow traffic allowed on port 49000
+[1] First run only the nodetest container --> nodetest is port-natted on host 4900. All traffic is allowed on port 49000
 
-[2] Next, run fw container. It installs rule in the host's ip table. All traffic is drop at the host (does not reach the fw container).
+[2] Next, run fw container. It installs "drop traffic on port 49000" rule directly in the host's ip table. All nodetest traffic is drop at the host (does not reach the fw container).
